@@ -151,13 +151,13 @@ This will force the mobile format rendering, no matter from where the user is re
     session[:mobylette_override] = nil
 
 === Notice: 
-Be sure you are forcing / skiping mobile requests e.g. in a before_filter like : skip_or_force_mobile BEFORE you are including the Mobylette::RespondToMobileRequests module. 
-Mobylette adds own before_filter to check the session var which would be executed before your filter. 
+Be sure you are forcing / skiping mobile requests e.g. in a before_action like : skip_or_force_mobile BEFORE you are including the Mobylette::RespondToMobileRequests module. 
+Mobylette adds own before_action to check the session var which would be executed before your filter. 
 
   class ApplicationController < ActionController::Base 
     #...
     
-    before_filter :skip_or_force_mobile
+    before_action :skip_or_force_mobile
     
     include Mobylette::RespondToMobileRequests
     
